@@ -115,25 +115,29 @@ h1 {
     width: 4rem;
 }
 
-.list-group-item {
-    padding: 0rem !important;
-}
-
-.waitTimeBackgroundGreen {
-    background-color: rgb(45, 160, 30);
+.wait-time-background {
     border-radius: 0.2rem;
+    padding: 0 3px;
 }
 
-.waitTimeBackgroundYellow {
-    background-color: rgb(211, 211, 51);
-    border-radius: 0.2rem;
+.wait-time-background.green {
+    background-color: rgb(70, 190, 54);
 }
 
-.waitTimeBackgroundRed {
-    background-color: rgb(167, 4, 4);
-    border-radius: 0.2rem;
+.wait-time-background.yellow {
+    background-color: rgb(255, 255, 75);
+}
+.wait-time-background.orange {
+    background-color: rgb(247, 137, 35);
+} 
+
+.wait-time-background.red {
+    background-color: rgb(247, 22, 22);
 }
 
+.strike-through {
+    text-decoration: line-through;
+}
 
 .circle {
     width: 15px;
