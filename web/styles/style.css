@@ -38,7 +38,7 @@ h1 {
 
 #forecastTitle {
     font-weight: bold;
-    font-size: large;
+    font-size: 25px;
     margin: 0.5rem;;
 }
 
@@ -160,4 +160,23 @@ h1 {
 
 .circle.black {
     background-color: black;
+}
+
+.weatherrow {
+    margin: 0 !important;
+    padding-top: 20px;
+    padding-left: 7px;
+    padding-right: 0px;
+}
+
+.weathercol {
+    width: 20%;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.daylabel {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }

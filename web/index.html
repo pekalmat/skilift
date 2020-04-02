@@ -43,7 +43,23 @@
                 <p id="forecastTitle">Forecast</p>
                 <img id="regionLogo" class="" src="img/region-logo.png" alt="Regionales Logo">
             </div>
-            <img id="forecastPlaceholder" class="" src="img/forecastPlaceholder.png">
+            <div class="row weatherrow">
+                <div class="col weathercol" id="weather0"></div>
+                <div class="col weathercol" id="weather1"></div>
+                <div class="col weathercol" id="weather2"></div>
+                <div class="col weathercol" id="weather3"></div>
+                <div class="col weathercol" id="weather4"></div>
+            </div>
+            <div class="row weatherrow">
+                <div class="col weathercol"><p class="daylabel" id="dayLabel0"></p></div>
+                <div class="col weathercol"><p class="daylabel" id="dayLabel1"></p></div>
+                <div class="col weathercol"><p class="daylabel" id="dayLabel2"></p></div>
+                <div class="col weathercol"><p class="daylabel" id="dayLabel3"></p></div>
+                <div class="col weathercol"><p class="daylabel" id="dayLabel4"></p></div>
+            </div>
+            <div class="row">
+                <canvas id="bar-chart" width="800" height="400"></canvas>
+            </div>
         </div>
     </div>
 
@@ -58,6 +74,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="js/home-forecast.js"></script>
 </body>
 
 </html>
