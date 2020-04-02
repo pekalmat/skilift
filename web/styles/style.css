@@ -1,6 +1,6 @@
 body {
     max-width: 414px;
-    max-height: 736;
+    max-height: 736px;
     margin: auto !important;
 }
 
@@ -164,6 +164,14 @@ h1 {
 
 .circle.black {
     background-color: black;
+}
+
+.circle.green {
+    background-color: green;
+}
+
+.circle.yellow {
+    background-color: yellow;
 }
 
 .weatherrow {

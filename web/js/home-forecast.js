@@ -90,7 +90,7 @@ new Chart(document.getElementById("bar-chart"), {
         datasets: [
             {
                 label: "",
-                backgroundColor: ["#787878", "#787878","#787878","#787878","#787878"],
+                backgroundColor: "#787878",
                 data: auslastung // to be calculated by the server
             }
         ]
