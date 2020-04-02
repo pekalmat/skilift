@@ -1,0 +1,163 @@
+body {
+    max-width: 414px;
+    max-height: 736;
+    margin: auto !important;
+}
+
+header {
+    height: 50px;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: grey;
+    margin-bottom: 0rem !important; 
+}
+
+h1 {
+    margin: 0rem !important;
+    font-size: 2rem !important;
+}
+
+
+
+#content {
+    min-height: calc(100vh - 50px);
+    height: calc(100vh - 50px);
+}
+
+#regionLogo {
+    width: 130px;
+    height: 30px;
+    margin: 0.5rem;
+}
+
+#forecastTitle {
+    font-weight: bold;
+    font-size: large;
+    margin: 0.5rem;;
+}
+
+#forecastPlaceholder {
+    width: 100%;
+    height: auto;
+}
+
+#waitTimeBanner {
+    background-color: yellow;
+    height: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.widthLimiter {
+    width: 100%;
+}
+
+.navbar {
+    padding: 0rem !important;
+}
+
+.navbar-nav {
+    width: 100%
+}
+
+.pBlack {
+    color: black;
+}
+
+.oneThird {
+    width: 33.33%;
+    text-align: center;
+}
+
+.navButton {
+    width: 33.33%;
+    text-align: center;
+    background-color: silver;
+    padding-bottom: 0.2rem;
+    padding-top: 0.2rem;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.contentWrapper {
+    justify-content: space-between;
+    height: 100%;
+}
+
+.list-group {
+    width: 100%;
+}
+
+.liftTitle {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.pictogramS {
+    height: 1rem;
+    width: 1rem;
+}
+
+.pictogramM {
+    height: 2rem;
+    width: 2rem;
+}
+
+.pictogramL {
+    height: 4rem;
+    width: 4rem;
+}
+
+.list-group-item {
+    padding: 0rem !important;
+}
+
+.waitTimeBackgroundGreen {
+    background-color: rgb(45, 160, 30);
+    border-radius: 0.2rem;
+}
+
+.waitTimeBackgroundYellow {
+    background-color: rgb(211, 211, 51);
+    border-radius: 0.2rem;
+}
+
+.waitTimeBackgroundRed {
+    background-color: rgb(167, 4, 4);
+    border-radius: 0.2rem;
+}
+
+
+.circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle:first-of-type {
+    margin-left: 5px;
+}
+
+.circle + .circle {
+    margin-left: 5px;
+}
+
+.circle.blue {
+    background-color: blue;
+}
+
+.circle.red {
+    background-color: red;
+}
+
+.circle.black {
+    background-color: black;
+}
