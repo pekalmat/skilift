@@ -182,6 +182,13 @@ h1 {
     background-color: yellow;
 }
 
+.reservation-button {
+    background-color: rgb(180, 12, 12);
+    color: white;
+    border: 0;
+    border-radius: 4px;
+}
+
 .restaurant-link {
     text-decoration: underline !important;
 }
