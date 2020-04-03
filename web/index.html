@@ -30,27 +30,16 @@
         </nav>
     </header>
 
-    <div class="container">
-        <div class="row" style="border-bottom: 1px solid grey;">
-            <div class="row">
-                <img class="d-block w-100" src="img/LiftsAndSlopes.png" alt="Pyramids">
-            </div>
-            <div class="row">
-                <div class="col oneThird">
-                    <div class="col"><span class="circle green"></span></div>
-                    <div class="col"><p class="text-center">Offen</p></div>
-                </div>
-                <div class="col oneThird">
-                    <div class="col"><span class="circle yellow"></span></div>
-                    <div class="col"><p class="text-center">Vorbereitung</p></div>
-                </div>
-                <div class="col oneThird">
-                    <div class="col"><span class="circle red"></span></div>
-                    <div class="col"><p class="text-center">Geschlossen</p></div>
-                </div>
-            </div>
+    <div class="">
+    <div>
+        <img class="d-block w-100" src="img/LiftsAndSlopes.png" alt="Map with lifts and slopes">
+        <div class="d-flex justify-content-between border-bottom align-items-center">
+            <p class="oneThird"><span class="circle green"></span>Offen</p>
+            <p class="oneThird"><span class="circle yellow"></span>In Vorbereitung</p>
+            <p class="oneThird"><span class="circle red"></span>Geschlossen</p>
         </div>
-        <div >
+    </div>
+        <div class="container">
             <div class="d-flex justify-content-between">
                 <p id="forecastTitle">Forecast</p>
                 <img id="regionLogo" class="" src="img/region-logo.png" alt="Regionales Logo">
@@ -70,7 +59,10 @@
                 <div class="col weathercol"><p class="daylabel" id="dayLabel4"></p></div>
             </div>
             <div class="row">
-                <canvas id="bar-chart" width="800" height="370"></canvas>
+                <canvas id="bar-chart" width="800" height="300"></canvas>
+            </div>
+            <div class="row">
+                <p class=" mx-auto font-weight-bold">Auslastung</p>
             </div>
         </div>
     </div>
