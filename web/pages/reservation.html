@@ -45,24 +45,26 @@
                 <form>
                     <div class="form-group">
                         <label for="vorname">Vorname</label>
-                        <input type="text" class="form-control" id="name" placeholder="Vorname">
+                        <input type="text" class="form-control" id="vorname" placeholder="Vorname">
                     </div>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
                         <label for="seatType">Sitzplatz</label>
                         <div id="seatType">
-                            <input type="radio" id="innen" name="innen" value="innen">
-                            <label for="Innen">Innen</label>
-                            <input type="radio" id="aussen" name="aussen" value="aussen">
-                            <label for="aussen">Aussen</label>
+                            <fieldset>
+                                <input type="radio" id="innen" name="type" value="innen">
+                                <label for="innen">Innen</label>
+                                <input type="radio" id="aussen" name="type" value="aussen">
+                                <label for="aussen">Aussen</label>
+                            </fieldset>
                         </div>
                     </div>
                     <div class="form-group">
