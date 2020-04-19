@@ -1,0 +1,11 @@
+Implementation notes and comments:
+
+	1. Added serialVersion for all Serializable classes (Entities)
+		/**
+	 	* serialVersion required for Serializable classes.
+	 	* -> It is strongly recommended that all serializable classes explicitly declare serialVersionUID values, 
+	 	* since the default serialVersionUID computation is highly sensitive to class details that may vary depending 
+	 	* on compiler implementations, and can thus result in unexpected InvalidClassExceptions during deserialization.
+	 	*/
+	2. Added not null & unique constraints where it's usefull 
+		! Weather has a unique constraint combined out of two attributes (The idea is to prevent duplicated pairs/records in the table)
