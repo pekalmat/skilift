@@ -25,6 +25,8 @@ public class LiftUtilization implements Serializable{
 	@JoinColumn(name = "lift_id")
 	private Lift lift;
 	
+	private Integer utilization;
+	
 	private Date timestamp;
 	
 	@ManyToOne
@@ -32,6 +34,17 @@ public class LiftUtilization implements Serializable{
 	private Weather weather;
 	
 	private Boolean isWorkday;
+	
+	public LiftUtilization() {
+	}
+	
+	public LiftUtilization(Lift lift, Integer utilization, Date timestamp, Weather weather, Boolean isWorkday) {
+		this.lift = lift;
+		this.utilization = utilization;
+		this.timestamp = timestamp;
+		this.weather = weather;
+		this.isWorkday = isWorkday;
+	}
 	
 	public Long getId() {
 		return id;
@@ -64,5 +77,28 @@ public class LiftUtilization implements Serializable{
 	public void setisWorkday(Boolean isWorkday) {
 		this.isWorkday = isWorkday;
 	}
-	
+
+	public Lift getLift() {
+		return lift;
+	}
+
+	public void setLift(Lift lift) {
+		this.lift = lift;
+	}
+
+	public Integer getUtilization() {
+		return utilization;
+	}
+
+	public void setUtilization(Integer utilization) {
+		this.utilization = utilization;
+	}
+
+	public Boolean getIsWorkday() {
+		return isWorkday;
+	}
+
+	public void setIsWorkday(Boolean isWorkday) {
+		this.isWorkday = isWorkday;
+	}
 }

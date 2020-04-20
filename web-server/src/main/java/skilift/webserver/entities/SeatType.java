@@ -26,6 +26,13 @@ public class SeatType implements Serializable {
 	
 	@NotNull
 	private String seatType;
+	
+	public SeatType() {
+	}
+	
+	public SeatType(String seatType) {
+		this.seatType = seatType;
+	}
 
 	public Long getId() {
 		return id;

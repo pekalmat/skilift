@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(
 	uniqueConstraints={
-		@UniqueConstraint(columnNames={"liftType"})
+		@UniqueConstraint(columnNames={"liftType", "capacity"})
 	}
 )
 public class LiftType implements Serializable {
@@ -29,6 +29,14 @@ public class LiftType implements Serializable {
 	
 	@NotNull
 	private String liftType;
+	
+	public LiftType() {
+	}
+	
+	public LiftType(Integer capacity, String liftType) {
+		this.capacity = capacity;
+		this.liftType = liftType;
+	}
 
 	public Long getId() {
 		return id;

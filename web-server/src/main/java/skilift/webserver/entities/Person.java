@@ -1,6 +1,7 @@
 package skilift.webserver.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -45,6 +46,18 @@ public class Person implements Serializable {
     
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "person")
     private Set<Reservation> reservations;
+	
+	public Person() {
+	}
+	
+	public Person(String firstName, String surname, String email, String password, Integer ticketNr) {
+		this.firstName = firstName;
+		this.surname = surname;
+		this.email = email;
+		this.password = password;
+		this.ticketNr = ticketNr;
+		this.reservations = new HashSet<>();
+	}
 
 	public Long getId() {
 		return id;

@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -35,7 +36,9 @@ public class Gastronomy implements Serializable {
 	private String name;
 	
 	@NotNull
-	private String type;
+	@ManyToOne
+	@JoinColumn(name = "gastronomy_type_id")
+	private GastronomyType gastronomyType;
 	
 	private Integer indoorSeats;
 	
@@ -43,13 +46,24 @@ public class Gastronomy implements Serializable {
 	
 	private String speciality;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(name="mapping_lift_gastronomy", joinColumns=@JoinColumn(name="gastronomy_id"), inverseJoinColumns=@JoinColumn(name="lift_id"))
 	private Set<Lift> lifts;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "gastronomy")
 	private Set<GastronomyUtilization> gastronomyutilization;
 
+	public Gastronomy() {
+	}
+	
+	public Gastronomy(String name, GastronomyType gastronomyType, Integer indoorSeats, Integer outdoorSeats, String speciality) {
+		this.name = name;
+		this.gastronomyType = gastronomyType;
+		this.indoorSeats = indoorSeats;
+		this.outdoorSeats = outdoorSeats;
+		this.speciality = speciality;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -66,12 +80,12 @@ public class Gastronomy implements Serializable {
 		this.name = name;
 	}
 
-	public String getType() {
-		return type;
+	public GastronomyType getGastronomyType() {
+		return gastronomyType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setGastronomyType(GastronomyType gastronomyType) {
+		this.gastronomyType = gastronomyType;
 	}
 
 	public Integer getIndoorSeats() {

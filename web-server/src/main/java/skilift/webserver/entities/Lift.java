@@ -1,6 +1,7 @@
 package skilift.webserver.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -33,12 +34,12 @@ public class Lift implements Serializable {
     private Long id;
 	
 	@NotNull
+	private String name;
+	
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "lift_type_id")
 	private LiftType liftType;
-	
-	@NotNull
-	private String name;
 	
 	@ManyToOne
 	@JoinColumn(name = "lift_status_id")
@@ -46,16 +47,29 @@ public class Lift implements Serializable {
 	
 	private Integer wait;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(name="mapping_lift_gastronomy", joinColumns=@JoinColumn(name="lift_id"), inverseJoinColumns=@JoinColumn(name="gastronomy_id"))
 	private Set<Gastronomy> gastronomies;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(name="mapping_lift_slope", joinColumns=@JoinColumn(name="lift_id"), inverseJoinColumns=@JoinColumn(name="slope_id"))
 	private Set<Slope> slopes;
 	
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "lift")
 	private Set<LiftUtilization> liftUtilization;
+	
+	public Lift() {
+	}
+	
+	public Lift(String name, LiftType liftType, LiftStatus status, Integer wait) {
+		this.name = name;
+		this.liftType = liftType;
+		this.status = status;
+		this.wait = wait;
+		this.gastronomies = new HashSet<>();
+		this.slopes = new HashSet<>();
+		this.liftUtilization = new HashSet<>();
+	}
 
 	public Long getId() {
 		return id;
@@ -65,20 +79,20 @@ public class Lift implements Serializable {
 		this.id = id;
 	}
 
-	public LiftType getLiftType() {
-		return liftType;
-	}
-
-	public void setLiftType(LiftType liftType) {
-		this.liftType = liftType;
-	}
-
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public LiftType getLiftType() {
+		return liftType;
+	}
+
+	public void setLiftType(LiftType liftType) {
+		this.liftType = liftType;
 	}
 
 	public LiftStatus getStatus() {

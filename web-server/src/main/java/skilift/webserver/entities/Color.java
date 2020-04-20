@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 @Table(
 	uniqueConstraints={
 		@UniqueConstraint(columnNames={"color"}),
+		@UniqueConstraint(columnNames={"colorCode"}),
 		@UniqueConstraint(columnNames={"difficultyLevel"})
 	}
 )
@@ -29,7 +30,19 @@ public class Color implements Serializable {
 	private String color;
 	
 	@NotNull
+	private String colorCode;
+	
+	@NotNull
 	private String difficultyLevel;
+	
+	public Color() {
+	}
+	
+	public Color(String color, String colorCode, String difficultyLevel) {
+		this.color = color;
+		this.colorCode = colorCode;
+		this.difficultyLevel = difficultyLevel;
+	}
 
 	public Long getId() {
 		return id;
@@ -45,6 +58,14 @@ public class Color implements Serializable {
 
 	public void setColor(String color) {
 		this.color = color;
+	}
+	
+	public String getColorCOde() {
+		return colorCode;
+	}
+	
+	public void setColorCode(String colorCode) {
+		this.colorCode = colorCode;
 	}
 
 	public String getDifficultyLevel() {

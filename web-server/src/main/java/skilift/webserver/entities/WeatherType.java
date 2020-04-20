@@ -26,6 +26,13 @@ public class WeatherType implements Serializable {
 	
 	@NotNull
 	private String weatherType;
+	
+	public WeatherType() {
+	}
+	
+	public WeatherType(String weatherType) {
+		this.weatherType = weatherType;
+	}
 
 	public Long getId() {
 		return id;

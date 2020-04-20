@@ -42,6 +42,18 @@ public class Reservation implements Serializable {
 	
 	@NotNull
 	private Integer seats;
+	
+	public Reservation() {
+	}
+	
+	public Reservation(Person person, Gastronomy gastronomy, SeatType seatType, Date reservationTime, Date reservationTimestamp, Integer seats) {
+		this.person = person;
+		this.gastronomy = gastronomy;
+		this.seatType = seatType;
+		this.reservationTime = reservationTime;
+		this.reservationTimestamp = reservationTimestamp;
+		this.seats = seats;
+	}
 
 	public Long getId() {
 		return id;

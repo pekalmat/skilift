@@ -1,6 +1,7 @@
 package skilift.webserver.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -30,20 +31,30 @@ public class Slope implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+	@NotNull
+	private String name;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "color_id")
 	private Color color;
 	
-	@NotNull
-	private String name;
-	
 	private Double length;
 	
-	@ManyToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(name="mapping_lift_slope", joinColumns=@JoinColumn(name="slope_id"), inverseJoinColumns=@JoinColumn(name="lift_id"))
 	private Set<Lift> lifts;
+	
+	public Slope() {
+	}
+	
+	public Slope(String name, Color color, Double length) {
+		this.name = name;
+		this.color = color;
+		this.length = length;
+		this.lifts = new HashSet<>();
+	}
 
 	public Long getId() {
 		return id;
@@ -53,20 +64,20 @@ public class Slope implements Serializable {
 		this.id = id;
 	}
 
-	public Color getColor() {
-		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
-
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
 	}
 
 	public Double getLength() {

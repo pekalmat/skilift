@@ -33,6 +33,14 @@ public class Weather implements Serializable {
 	
 	@NotNull
 	private Integer temperature;
+	
+	public Weather() {
+	}
+	
+	public Weather(WeatherType weatherType, Integer temperature) {
+		this.weatherType = weatherType;
+		this.temperature = temperature;
+	}
 
 	public Long getId() {
 		return id;

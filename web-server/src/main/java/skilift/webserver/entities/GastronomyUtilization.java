@@ -26,6 +26,8 @@ public class GastronomyUtilization implements Serializable {
 	@JoinColumn(name = "gastronomy_id")
 	private Gastronomy gastronomy;
 	
+	private Integer utilization;
+	
 	private Date timestamp;
 	
 	@ManyToOne
@@ -33,6 +35,17 @@ public class GastronomyUtilization implements Serializable {
 	private Weather weather;
 	
 	private Boolean isWorkday;
+	
+	public GastronomyUtilization() {
+	}
+	
+	public GastronomyUtilization(Gastronomy gastronomy, Integer utilization, Date timestamp, Weather weather, Boolean isWorkday) {
+		this.gastronomy = gastronomy;
+		this.utilization = utilization;
+		this.timestamp = timestamp;
+		this.weather = weather;
+		this.isWorkday = isWorkday;
+	}
 
 	public Long getId() {
 		return id;
@@ -72,6 +85,14 @@ public class GastronomyUtilization implements Serializable {
 
 	public void setIsWorkday(Boolean isWorkday) {
 		this.isWorkday = isWorkday;
+	}
+
+	public Integer getUtilization() {
+		return utilization;
+	}
+
+	public void setUtilization(Integer utilization) {
+		this.utilization = utilization;
 	}
 	
 }

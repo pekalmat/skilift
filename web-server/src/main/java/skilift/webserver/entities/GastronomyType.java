@@ -13,25 +13,25 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(
 	uniqueConstraints={
-		@UniqueConstraint(columnNames={"status"})
+		@UniqueConstraint(columnNames={"gastronomyType"})
 	}
 )
-public class LiftStatus implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class GastronomyType implements Serializable {
+	
+private static final long serialVersionUID = 1L;
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
 	@NotNull
-	private String status;
+	private String gastronomyType;
 	
-	public LiftStatus() {
+	public GastronomyType() {
 	}
 	
-	public LiftStatus(String status) {
-		this.status = status;
+	public GastronomyType(String gastronomyType) {
+		this.gastronomyType = gastronomyType;
 	}
 
 	public Long getId() {
@@ -42,12 +42,12 @@ public class LiftStatus implements Serializable {
 		this.id = id;
 	}
 
-	public String getStatus() {
-		return status;
+	public String getGastronomyType() {
+		return gastronomyType;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setGastronomyType(String gastronomyType) {
+		this.gastronomyType = gastronomyType;
 	}
 	
 }
