@@ -13,53 +13,38 @@ import org.springframework.web.bind.annotation.RestController;
 import skilift.webserver.entities.Person;
 import skilift.webserver.repositories.PersonRepository;
 
-/**
- * REST-Controller für die Ressource World
- */
 @RestController
 public class PersonRestController {
     
-    // Verdrahten der Repository-Klasse, um Karten in der Datenbank zu finden
     @Autowired
     private PersonRepository personRepository;
     
     /**
-     * REST-Ressource für URL /infmapi/v1/worlds/{name} (GET)
-     * 
-     * @param name        Name einer Welt
-     * @return               HTTP-Response mit einem Status 200 oder 404, sowie im ersten Fall einer zur Id passenden Welt-Entität als Body (automatisch als JSON serialisiert)
+     * REST-Ressource für URL /skiapp/persons/{email} (GET)
+     * @param email			email einer Person
+     * @return             	HTTP-Response mit einem Status 200 oder 404, sowie im ersten Fall eine zur Email passende Person-Entität als Body (automatisch als JSON serialisiert)
      */
-    @RequestMapping(value = "/infmapi/v1/worlds/{name}", method = RequestMethod.GET)
-    public ResponseEntity<Person> getPerson(@PathVariable String name){        
-        // Zur Id passende Welt suchen
-        Optional<Person> world = personRepository.findByFirstName(name);
-        
-        // Falls Welt gefunden wurde, dann world zurück geben
-        if(world.isPresent()) {
-            return new ResponseEntity(world.get(), HttpStatus.OK);
+    @RequestMapping(value = "/skiapp/persons/{email}", method = RequestMethod.GET)
+    public ResponseEntity<Person> getPerson(@PathVariable String email){
+        Optional<Person> person = personRepository.findByEmail(email);
+        if(person.isPresent()) {
+            return new ResponseEntity<Person>(person.get(), HttpStatus.OK);
         } else {
-            // Ansonsten ResourceNotFoundException (404)
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Person>(HttpStatus.NOT_FOUND);
         }        
     }
     
     /**
-     * REST-Ressource für URL /infmapi/v1/worlds (GET)
-     * 
-     * @return                  HTTP-Response mit einem Status 200 oder 404, sowie im ersten Fall einer Liste aller Welten-Entitäten im JSON-Format
+     * REST-Ressource für URL /skiapp/persons (GET)
+     * @return				HTTP-Response mit einem Status 200 oder 404, sowie im ersten Fall einer Liste aller Welten-Entitäten im JSON-Format
      */
-    @RequestMapping(value = "/infmapi/v1/worlds", method = RequestMethod.GET)
+    @RequestMapping(value = "/skiapp/persons", method = RequestMethod.GET)
     public ResponseEntity<List<Person>> getAllPersons(){
-        // Alle Karten aus dem Repository laden und der cards-Variable zuweisen
         List<Person> worlds = personRepository.findAllByOrderByFirstName();
-        
-        // Wenn die Liste Einträge enthält...
         if(worlds != null && !worlds.isEmpty()){
-            // ... dann diese als Body zurückgeben
-            return new ResponseEntity(worlds, HttpStatus.OK);
+            return new ResponseEntity<List<Person>>(worlds, HttpStatus.OK);
         } else {
-            // ... ansonsten ResourceNotFoundException (404)
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<List<Person>>(HttpStatus.NOT_FOUND);
         }
     }
 }

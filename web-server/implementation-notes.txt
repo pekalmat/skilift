@@ -9,3 +9,9 @@ Implementation notes and comments:
 	 	*/
 	2. Added not null & unique constraints where it's usefull 
 		! Weather has a unique constraint combined out of two attributes (The idea is to prevent duplicated pairs/records in the table)
+	3. Created default Repositories
+	4. Created and stored Test Data at application startup
+		- Utilization Data for Lifts and Gastronomies is kind of summary. One entry per hour per weather and per lift/gastronomy 
+			with random utilization Number
+	5. Created default RestControllers accessible at:
+		-> http://localhost:8081/skiapp/persons

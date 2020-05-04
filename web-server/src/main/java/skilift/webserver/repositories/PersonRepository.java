@@ -9,6 +9,6 @@ import skilift.webserver.entities.Person;
 public interface PersonRepository extends JpaRepository<Person, Long> {
 	
 	List<Person> findAllByOrderByFirstName();
-    
-    Optional<Person> findByFirstName(String name);
+        
+    Optional<Person> findByEmail(String email);
 }
