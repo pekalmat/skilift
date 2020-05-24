@@ -5,19 +5,20 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <!-- Custom CSS-->
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    
+    <!-- Axios for back-end communication-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Vue.js script reference-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <title>Wintersport Engadin</title>
 </head>
 
 <body>
-
     <header>
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <div class="navbar-collapse" id="navbarNav">
@@ -31,14 +32,14 @@
     </header>
 
     <div class="">
-    <div>
-        <img class="d-block w-100" src="img/LiftsAndSlopes.png" alt="Map with lifts and slopes">
-        <div class="d-flex justify-content-around border-bottom align-items-center">
-            <p class="d-flex align-items-center"><span class="circle green"></span>Offen</p>
-            <p class="d-flex align-items-center"><span class="circle yellow"></span>In Vorbereitung</p>
-            <p class="d-flex align-items-center"><span class="circle red"></span>Geschlossen</p>
+        <div>
+            <img class="d-block w-100" src="img/LiftsAndSlopes.png" alt="Map with lifts and slopes">
+            <div class="d-flex justify-content-around border-bottom align-items-center">
+                <p class="d-flex align-items-center"><span class="circle green"></span>Offen</p>
+                <p class="d-flex align-items-center"><span class="circle yellow"></span>In Vorbereitung</p>
+                <p class="d-flex align-items-center"><span class="circle red"></span>Geschlossen</p>
+            </div>
         </div>
-    </div>
         <div class="container">
             <div class="d-flex justify-content-between">
                 <p id="forecastTitle">Forecast</p>
@@ -76,6 +77,8 @@
     <!-- scripts for home-forecast function -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="js/home-forecast.js"></script>
+    <!--<script src="js/app.js"></script>-->
+
 </body>
 
 </html>

@@ -90,9 +90,9 @@ public class LiftSeedDataCreator {
 		liftRepository.save(mottaNaluns);
 		Lift rachogna = new Lift("Rachögna", liftTypes.get("dragLift"), liftStatus.get("open"), 2);
 		liftRepository.save(rachogna);
-		Lift zauberTeppich1 = new Lift("Zauberteppich I", liftTypes.get("babyLift"), liftStatus.get("open"), 0);
+		Lift zauberTeppich1 = new Lift("Zauberteppich I", liftTypes.get("babyLift"), liftStatus.get("open"), 30);
 		liftRepository.save(zauberTeppich1);
-		Lift zauberTeppich2 = new Lift("Zauberteppich II", liftTypes.get("babyLift"), liftStatus.get("open"), 0);
+		Lift zauberTeppich2 = new Lift("Zauberteppich II", liftTypes.get("babyLift"), liftStatus.get("open"), 30);
 		liftRepository.save(zauberTeppich2);
 		Lift zauberTeppich3 = new Lift("Zauberteppich III", liftTypes.get("babyLift"), liftStatus.get("open"), 0);
 		liftRepository.save(zauberTeppich3);

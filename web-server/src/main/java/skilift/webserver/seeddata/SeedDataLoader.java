@@ -100,8 +100,8 @@ public class SeedDataLoader implements ApplicationRunner {
 		List<Weather> weathers = weatherSeedDataCreator.createWeathers(weatherTypes);
 		LOGGER.info("... " + weathers.size() + " Weather Data records created");
 		
-		Integer utilizationDataCount = utilizationSeedDataCreator.createLiftAndGastronomyUtilizations(weathers, lifts, gastronomies);
-		LOGGER.info("... " + utilizationDataCount + " Lift and Gastronomy Utilization Data Records created");
+		//Integer utilizationDataCount = utilizationSeedDataCreator.createLiftAndGastronomyUtilizations(weathers, lifts, gastronomies);
+		//LOGGER.info("... " + utilizationDataCount + " Lift and Gastronomy Utilization Data Records created");
 
 	}
 	

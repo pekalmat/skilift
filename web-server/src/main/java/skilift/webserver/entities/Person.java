@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 @Table(
@@ -44,6 +46,7 @@ public class Person implements Serializable {
     
     private Integer ticketNr;
     
+    @JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "person")
     private Set<Reservation> reservations;
 	

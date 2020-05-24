@@ -40,9 +40,9 @@ public class PersonRestController {
      */
     @RequestMapping(value = "/skiapp/persons", method = RequestMethod.GET)
     public ResponseEntity<List<Person>> getAllPersons(){
-        List<Person> worlds = personRepository.findAllByOrderByFirstName();
-        if(worlds != null && !worlds.isEmpty()){
-            return new ResponseEntity<List<Person>>(worlds, HttpStatus.OK);
+        List<Person> persons = personRepository.findAllByOrderByFirstName();
+        if(persons != null && !persons.isEmpty()){
+            return new ResponseEntity<List<Person>>(persons, HttpStatus.OK);
         } else {
             return new ResponseEntity<List<Person>>(HttpStatus.NOT_FOUND);
         }

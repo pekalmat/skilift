@@ -19,6 +19,8 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(
 	uniqueConstraints={
@@ -47,14 +49,17 @@ public class Lift implements Serializable {
 	
 	private Integer wait;
 	
+	@JsonIgnore
 	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(name="mapping_lift_gastronomy", joinColumns=@JoinColumn(name="lift_id"), inverseJoinColumns=@JoinColumn(name="gastronomy_id"))
 	private Set<Gastronomy> gastronomies;
 	
+	@JsonIgnore
 	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(name="mapping_lift_slope", joinColumns=@JoinColumn(name="lift_id"), inverseJoinColumns=@JoinColumn(name="slope_id"))
 	private Set<Slope> slopes;
 	
+	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "lift")
 	private Set<LiftUtilization> liftUtilization;
 	

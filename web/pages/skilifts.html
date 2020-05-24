@@ -2,17 +2,20 @@
 <html lang="en">
 
 <head>
-
-    <link rel="stylesheet" type="text/css" href="../styles/style.css">
-
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <!-- Axios for back-end communication-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Vue.js script reference-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
     <title>Wintersport Engadin</title>
-
 </head>
 
 <body>
@@ -27,149 +30,12 @@
         </div>
     </nav>
 
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            <a href="skiliftsDetail.html" class="">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 bd-highlight"><img src="../img/sessellift4.png"></div>
-                    <div class="p-2 liftTitle align-items-center">
-                        <p>Ftan</p>
-                    </div>
-                    <div class="ml-auto p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <img class="pictogramS" src="../img/flag.png">
-                            <p class="pBlack">50m</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center wait-time-background green">
-                            <img class="pictogramS" src="../img/time.png">
-                            <p class="pBlack">3min</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
+    <ul id="skilifts" class="list-group list-group-flush">
+        <li v-for="lift in lifts" class="list-group-item">
+            <lift-item-component :lift="lift"></lift-item-component>
         </li>
-        <li class="list-group-item">
-            <a href="skiliftsDetail.html" class="">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 bd-highlight"><img src="../img/sessellift6.png"></div>
-                    <div class="p-2 liftTitle align-items-center">
-                        <p>Prui</p>
-                    </div>
-                    <div class="ml-auto p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <img class="pictogramS" src="../img/flag.png">
-                            <p class="pBlack">400m</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center wait-time-background yellow">
-                            <img class="pictogramS" src="../img/time.png">
-                            <p class="pBlack">10min</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="skiliftsDetail.html" class="">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 bd-highlight"><img src="../img/gondelbahn.png"></div>
-                    <div class="p-2 liftTitle align-items-center">
-                        <p>Motta Naluns</p>
-                    </div>
-                    <div class="ml-auto p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <img class="pictogramS" src="../img/flag.png">
-                            <p class="pBlack">1.2km</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center wait-time-background red">
-                            <img class="pictogramS" src="../img/time.png">
-                            <p class="pBlack">25min</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="skiliftsDetail.html" class="">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 bd-highlight"><img src="../img/sessellift6.png"></div>
-                    <div class="p-2 liftTitle align-items-center">
-                        <p>Naluns</p>
-                    </div>
-                    <div class="ml-auto p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <img class="pictogramS" src="../img/flag.png">
-                            <p class="pBlack">1.3km</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center wait-time-background orange">
-                            <img class="pictogramS" src="../img/time.png">
-                            <p class="pBlack">16min</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="skiliftsDetail.html" class="">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 bd-highlight"><img src="../img/sessellift4.png"></div>
-                    <div class="p-2 liftTitle align-items-center">
-                        <p>Clünas</p>
-                    </div>
-                    <div class="ml-auto p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <img class="pictogramS" src="../img/flag.png">
-                            <p class="pBlack">1.5km</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center wait-time-background green">
-                            <img class="pictogramS" src="../img/time.png">
-                            <p class="pBlack">5min</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="skiliftsDetail.html" class="">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 bd-highlight"><img src="../img/sessellift4.png"></div>
-                    <div class="p-2 liftTitle align-items-center">
-                        <p class="strike-through">Mot da Ri</p>
-                    </div>
-                    <div class="ml-auto p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <img class="pictogramS" src="../img/flag.png">
-                            <p class="pBlack">2.2km</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <p class="pBlack strike-through">geschlossen</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="skiliftsDetail.html" class="">
-                <div class="d-flex bd-highlight">
-                    <div class="p-2 bd-highlight"><img src="../img/sessellift4.png"></div>
-                    <div class="p-2 liftTitle align-items-center">
-                        <p>Salaniva</p>
-                    </div>
-                    <div class="ml-auto p-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <img class="pictogramS" src="../img/flag.png">
-                            <p class="pBlack">2.5km</p>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center wait-time-background green">
-                            <img class="pictogramS" src="../img/time.png">
-                            <p class="pBlack">4min</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </li>
-    
     </ul>
+    <script src="../js/skilifts.js"></script>
 
 </body>
-
 </html>
