@@ -14,71 +14,39 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Vue.js script reference-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
     <title>Wintersport Engadin</title>
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-light">
-            <div class="navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav flex-row justify-content-around">
-                    <li class="nav-item navButton border"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item navButton border"><a class="nav-link" href="pages/skilifts.html">Skilifte</a></li>
-                    <li class="nav-item navButton border"><a class="nav-link" href="pages/gastronomy.html">Gastronomie</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    <div id="app">
 
-    <div class="">
-        <div>
-            <img class="d-block w-100" src="img/LiftsAndSlopes.png" alt="Map with lifts and slopes">
-            <div class="d-flex justify-content-around border-bottom align-items-center">
-                <p class="d-flex align-items-center"><span class="circle green"></span>Offen</p>
-                <p class="d-flex align-items-center"><span class="circle yellow"></span>In Vorbereitung</p>
-                <p class="d-flex align-items-center"><span class="circle red"></span>Geschlossen</p>
-            </div>
-        </div>
-        <div class="container">
-            <div class="d-flex justify-content-between">
-                <p id="forecastTitle">Forecast</p>
-                <img id="regionLogo" class="" src="img/region-logo.png" alt="Regionales Logo">
-            </div>
-            <div class="row weatherrow">
-                <div class="col weathercol" id="weather0"></div>
-                <div class="col weathercol" id="weather1"></div>
-                <div class="col weathercol" id="weather2"></div>
-                <div class="col weathercol" id="weather3"></div>
-                <div class="col weathercol" id="weather4"></div>
-            </div>
-            <div class="row weatherrow">
-                <div class="col weathercol"><p class="daylabel" id="dayLabel0"></p></div>
-                <div class="col weathercol"><p class="daylabel" id="dayLabel1"></p></div>
-                <div class="col weathercol"><p class="daylabel" id="dayLabel2"></p></div>
-                <div class="col weathercol"><p class="daylabel" id="dayLabel3"></p></div>
-                <div class="col weathercol"><p class="daylabel" id="dayLabel4"></p></div>
-            </div>
-            <div class="row">
-                <canvas id="bar-chart" width="800" height="300"></canvas>
-            </div>
-            <div class="row">
-                <p class=" mx-auto font-weight-bold">Auslastung</p>
-            </div>
-        </div>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                <div class="navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav flex-row justify-content-around">
+                        <li class="nav-item navButton border"><router-link to="/">Home</router-link></li>
+                        <li class="nav-item navButton border"><router-link to="/lifts">Skilifte</router-link></li>
+                        <li class="nav-item navButton border"><router-link to="/gastronomies">Gastronomie</router-link></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+         <router-view></router-view>
+        
     </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <!-- JavaScripts: jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
     <!-- scripts for home-forecast function -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="js/home-forecast.js"></script>
-    <!--<script src="js/app.js"></script>-->
-
+    <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

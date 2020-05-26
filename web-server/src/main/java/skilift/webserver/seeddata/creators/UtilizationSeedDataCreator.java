@@ -45,26 +45,28 @@ public class UtilizationSeedDataCreator {
 			int low = 10;
 			int high = 100;
 			int randomUtilization;
-			for(int hour = 7; hour <= 18; hour++) {
-				for(Gastronomy gastronomy : gastronomies) {
-					//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
-					randomUtilization = random.nextInt(high-low) + low;
-					GastronomyUtilization gastronomyUtilizationWorkday = new GastronomyUtilization(gastronomy, randomUtilization, new Date(2020, 1, 1, hour, 0), weather, true);
-					gastronomyUtilizations.add(gastronomyUtilizationWorkday);
-					//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
-					randomUtilization = random.nextInt(high-low) + low;
-					GastronomyUtilization gastronomyUtilizationNonWorkday = new GastronomyUtilization(gastronomy, randomUtilization, new Date(2020, 1, 1, hour, 0), weather, true);
-					gastronomyUtilizations.add(gastronomyUtilizationNonWorkday);
-				}
-				for(Lift lift : lifts) {
-					//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
-					randomUtilization = random.nextInt(high-low) + low;
-					LiftUtilization liftUtilizationWorkday = new LiftUtilization(lift, randomUtilization, new Date(2020, 1, 1, hour, 0), weather, true);
-					liftUtilizations.add(liftUtilizationWorkday);
-					//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
-					randomUtilization = random.nextInt(high-low) + low;
-					LiftUtilization liftUtilizationNonWorkday = new LiftUtilization(lift, randomUtilization, new Date(2020, 1, 1, hour, 0), weather, true);
-					liftUtilizations.add(liftUtilizationNonWorkday);
+			for(int day = 0; day <=7; day++) {
+				for(int hour = 7; hour <= 18; hour++) {
+					for(Gastronomy gastronomy : gastronomies) {
+						//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
+						randomUtilization = random.nextInt(high-low) + low;
+						GastronomyUtilization gastronomyUtilizationWorkday = new GastronomyUtilization(gastronomy, randomUtilization, new Date(2020, 1, day, hour, 0), weather, true);
+						gastronomyUtilizations.add(gastronomyUtilizationWorkday);
+						//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
+						randomUtilization = random.nextInt(high-low) + low;
+						GastronomyUtilization gastronomyUtilizationNonWorkday = new GastronomyUtilization(gastronomy, randomUtilization, new Date(2020, 1, day, hour, 0), weather, true);
+						gastronomyUtilizations.add(gastronomyUtilizationNonWorkday);
+					}
+					for(Lift lift : lifts) {
+						//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
+						randomUtilization = random.nextInt(high-low) + low;
+						LiftUtilization liftUtilizationWorkday = new LiftUtilization(lift, randomUtilization, new Date(2020, 1, day, hour, 0), weather, true);
+						liftUtilizations.add(liftUtilizationWorkday);
+						//create gastro utilization 1 per hour between 7:00 and 18:00 for workday
+						randomUtilization = random.nextInt(high-low) + low;
+						LiftUtilization liftUtilizationNonWorkday = new LiftUtilization(lift, randomUtilization, new Date(2020, 1, day, hour, 0), weather, true);
+						liftUtilizations.add(liftUtilizationNonWorkday);
+					}
 				}
 			}
 		}

@@ -18,6 +18,8 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(
 	uniqueConstraints={
@@ -46,10 +48,12 @@ public class Gastronomy implements Serializable {
 	
 	private String speciality;
 	
+	@JsonIgnore
 	@ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
 	@JoinTable(name="mapping_lift_gastronomy", joinColumns=@JoinColumn(name="gastronomy_id"), inverseJoinColumns=@JoinColumn(name="lift_id"))
 	private Set<Lift> lifts;
 	
+	@JsonIgnore
 	@OneToMany(cascade=CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "gastronomy")
 	private Set<GastronomyUtilization> gastronomyutilization;
 
