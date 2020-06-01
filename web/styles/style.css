@@ -27,23 +27,33 @@ h1 {
     font-size: 2rem !important;
 }
 
-
+#bar-chart {
+    width: 100%;
+} 
 
 #content {
     min-height: calc(100vh - 50px);
     height: calc(100vh - 50px);
 }
 
+#day-row {
+    margin-left: .7rem!important;
+    margin-right: .7rem!important;
+}
+
 #regionLogo {
     width: 130px;
     height: 30px;
     margin: 0.5rem;
+    margin-right: 0rem;
 }
 
 #forecastTitle {
     font-weight: bold;
-    font-size: 25px;
-    margin: 0.5rem;;
+    font-size: 20px;
+    margin: 0.5rem;
+    color:  #717171;
+
 }
 
 #forecastPlaceholder {
@@ -66,6 +76,10 @@ h1 {
     border: 0;
     margin-left: 5px;
     margin-right: 5px;
+}
+
+.chart-row {
+    margin: auto;
 }
 
 .widthLimiter {
@@ -211,17 +225,15 @@ h1 {
 .weatherrow {
     margin: 0 !important;
     padding-top: 20px;
-    padding-left: 7px;
     padding-right: 0px;
 }
 
 .weathercol {
     width: 20%;
-    padding-left: 25px;
-    padding-right: 25px;
 }
 
 .daylabel {
+    color: #343a40!important;
     font-size: 20px;
     font-weight: bold;
     text-align: center;

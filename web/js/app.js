@@ -243,7 +243,7 @@ Vue.component('gastronomy-item-component', {
     },
     template: `
         <router-link :to="getDynamicRouteToGastronomyDetail(gastronomy.id)">
-            <div class="d-flex bd-highlight">
+            <div class="d-flex bd-highlight align-items-center">
                 <div class="p-2 bd-highlight"><img class="symbols" :src="showGastronomyTypeImage(gastronomy.gastronomyType)"></div>
                 <div class="p-2 liftTitle align-items-center">
                     <p>{{gastronomy.name}}</p>
@@ -543,7 +543,7 @@ Vue.component('lift-item-component', {
     },
     template: `
         <router-link :to="getDynamicRouteToLiftDetail(lift.id)">
-            <div class="d-flex bd-highlight">
+            <div class="d-flex bd-highlight align-items-center">
                 <div class="p-2 bd-highlight"><img :src="showLiftTypeImage(lift.liftType)"></div>
                 <div class="p-2 liftTitle align-items-center">
                     <p>{{lift.name}}</p>
@@ -623,7 +623,7 @@ var appHome = Vue.component('app-home', {
             
             <div class="container">
                 <div class="d-flex justify-content-between">
-                    <p id="forecastTitle">Forecast</p>
+                    <p class="text-dark" id="forecastTitle">Forecast</p>
                     <img id="regionLogo" class="" src="img/region-logo.png" alt="Regionales Logo">
                 </div>
                 
@@ -634,18 +634,18 @@ var appHome = Vue.component('app-home', {
                     <div class="col weathercol" id="weather3"></div>
                     <div class="col weathercol" id="weather4"></div>
                 </div>
-                <div class="row weatherrow">
+                <div id="day-row" class="row weatherrow">
                     <div class="col weathercol"><p class="daylabel" id="dayLabel0"></p></div>
                     <div class="col weathercol"><p class="daylabel" id="dayLabel1"></p></div>
                     <div class="col weathercol"><p class="daylabel" id="dayLabel2"></p></div>
                     <div class="col weathercol"><p class="daylabel" id="dayLabel3"></p></div>
                     <div class="col weathercol"><p class="daylabel" id="dayLabel4"></p></div>
                 </div>
-                <div class="row">
+                <div class="row chart-row">
                     <canvas id="bar-chart" width="800" height="300"></canvas>
                 </div>
                 <div class="row">
-                    <p class=" mx-auto font-weight-bold">Auslastung</p>
+                    <p class="text-dark mx-auto font-weight-bold">Auslastung</p>
                 </div>
             </div>
         </div>
