@@ -5,7 +5,9 @@ a {
 body {
     max-width: 414px;
     max-height: 736px;
+    height: 100%;
     margin: auto !important;
+
 }
 
 header {
@@ -32,13 +34,8 @@ h1 {
 } 
 
 #content {
-    min-height: calc(100vh - 50px);
-    height: calc(100vh - 50px);
-}
-
-#day-row {
-    margin-left: .7rem!important;
-    margin-right: .7rem!important;
+    min-height: calc(100vh - 45px);
+    height: calc(100vh - 45px);
 }
 
 #regionLogo {
@@ -80,6 +77,10 @@ h1 {
 
 .chart-row {
     margin: auto;
+}
+
+.form-group {
+    margin-bottom: .7rem;
 }
 
 .widthLimiter {
@@ -226,10 +227,14 @@ h1 {
     margin: 0 !important;
     padding-top: 20px;
     padding-right: 0px;
+    margin-left: .7rem!important;
+    margin-right: .7rem!important;
 }
 
 .weathercol {
     width: 20%;
+    padding: 0px;
+    text-align: center;
 }
 
 .daylabel {

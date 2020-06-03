@@ -20,6 +20,15 @@
     </parent>
 
     <dependencies>
+    
+    	<!-- Email -->
+    
+    	<dependency>
+    		<groupId>javax.mail</groupId>
+    		<artifactId>mail</artifactId>
+    		<version>1.5.0-b01</version>
+		</dependency>
+        
         <!-- Spring Boot Starter Web-Libraries inkl. REST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

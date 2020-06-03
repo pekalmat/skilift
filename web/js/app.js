@@ -92,6 +92,9 @@ var appReservation = Vue.component('app-reservation', {
             } 
         },
         submitReservation: function () {
+            
+
+
             console.log("reservation submited");
         }
     }
@@ -350,7 +353,7 @@ var appLift = Vue.component('app-lift', {
                     <canvas id="utilization-chart" width="550" height="270"></canvas>
                 </div>
 
-                <img class="w-100" height="250" src="../img/LiftsAndSlopes.png">
+                <img class="w-100 mt-auto" height="250" src="../img/LiftsAndSlopes.png">
 
             </div>
         </div> 
