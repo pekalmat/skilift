@@ -10,13 +10,13 @@ public class ForecastDay implements Serializable {
 	
 	private String dayLabel;
 	private Integer dayForecast;
-	private Integer dayForecastPercentage;
+	private String dayForecastPercentage;
 	private WeatherType weatherType;
 	
 	public ForecastDay(
 			String dayLabel,
 			Integer dayForecast,
-			Integer dayForecastPercentage,
+			String dayForecastPercentage,
 			WeatherType weatherType) {
 		this.dayLabel = dayLabel;
 		this.dayForecast = dayForecast;
@@ -40,11 +40,11 @@ public class ForecastDay implements Serializable {
 		this.dayForecast = dayForecast;
 	}
 
-	public Integer getDayForecastPercentage() {
+	public String getDayForecastPercentage() {
 		return dayForecastPercentage;
 	}
 
-	public void setDayForecastPercentage(Integer dayForecastPercentage) {
+	public void setDayForecastPercentage(String dayForecastPercentage) {
 		this.dayForecastPercentage = dayForecastPercentage;
 	}
 

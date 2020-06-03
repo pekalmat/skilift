@@ -35,11 +35,11 @@ public class HomeForecastDataRestController {
     private List<ForecastDay> generateForecastData() {
     	List<WeatherType> allWeatherTypes = weatherTypeRepository.findAll();
     	List<ForecastDay> forecastData = new ArrayList<ForecastDay>();
-    	forecastData.add(new ForecastDay(getDayLabel(0), 2478, 40,  allWeatherTypes.get(0)));
-    	forecastData.add(new ForecastDay(getDayLabel(1), 5267, 80, allWeatherTypes.get(1)));
-    	forecastData.add(new ForecastDay(getDayLabel(2), 734, 10, allWeatherTypes.get(2)));
-    	forecastData.add(new ForecastDay(getDayLabel(3), 784, 10, allWeatherTypes.get(3)));
-    	forecastData.add(new ForecastDay(getDayLabel(4), 433, 5, allWeatherTypes.get(4)));
+    	forecastData.add(new ForecastDay(getDayLabel(0), 2478, "40%",  allWeatherTypes.get(0)));
+    	forecastData.add(new ForecastDay(getDayLabel(1), 5267, "80%", allWeatherTypes.get(1)));
+    	forecastData.add(new ForecastDay(getDayLabel(2), 734, "10%", allWeatherTypes.get(2)));
+    	forecastData.add(new ForecastDay(getDayLabel(3), 784, "10%", allWeatherTypes.get(3)));
+    	forecastData.add(new ForecastDay(getDayLabel(4), 433, "5%", allWeatherTypes.get(4)));
     	return forecastData;
     }
     
