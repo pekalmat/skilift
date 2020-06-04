@@ -170,10 +170,13 @@ public class LiftSeedDataCreator {
 		lifts.get("mottaNaluns").getGastronomies().add(gastronomies.get("laCharpenna"));
 		liftRepository.save(lifts.get("mottaNaluns"));
 		lifts.get("clunas").getGastronomies().add(gastronomies.get("alpetta"));
+		lifts.get("clunas").getGastronomies().add(gastronomies.get("chammannaNalunsGastro"));
 		liftRepository.save(lifts.get("clunas"));
 		lifts.get("motDaRi").getGastronomies().add(gastronomies.get("alpetta"));
 		liftRepository.save(lifts.get("motDaRi"));
 		lifts.get("salaniva").getGastronomies().add(gastronomies.get("alpetta"));
+		lifts.get("salaniva").getGastronomies().add(gastronomies.get("somiBar"));
+		lifts.get("salaniva").getGastronomies().add(gastronomies.get("vastur"));
 		liftRepository.save(lifts.get("salaniva"));		
 	}	
 }

@@ -2,7 +2,6 @@ package skilift.webserver.repositories;
 
 import java.util.List;
 
-import org.jboss.logging.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import skilift.webserver.entities.Lift;

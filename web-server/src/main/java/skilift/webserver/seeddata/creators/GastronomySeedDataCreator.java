@@ -44,27 +44,27 @@ public class GastronomySeedDataCreator {
 	}
 	
 	public Map<String, Gastronomy> createGastronomies(Map<String, GastronomyType> gastronomyTypes) {
-		Gastronomy barLaCana = new Gastronomy("Bar la Cana", gastronomyTypes.get("bar"), 0, 0, "Spcialität?");
+		Gastronomy barLaCana = new Gastronomy("Bar la Cana", gastronomyTypes.get("bar"), 30, 120, "Alpenschuss");
 		gastronomyRepository.save(barLaCana);
-		Gastronomy prumanPrui = new Gastronomy("Bergrestaurant Prüman Prui", gastronomyTypes.get("bergrestaurant"), 0, 0, "Spcialität?");
+		Gastronomy prumanPrui = new Gastronomy("Bergrestaurant Prüman Prui", gastronomyTypes.get("bergrestaurant"), 50, 25, "Älpler-Rösti");
 		gastronomyRepository.save(prumanPrui);
-		Gastronomy laPalmaBar = new Gastronomy("La Palma Bar", gastronomyTypes.get("bar"), 0, 0,"Spcialität?");
+		Gastronomy laPalmaBar = new Gastronomy("La Palma Bar", gastronomyTypes.get("bar"), 112, 150,"Kafi Luz");
 		gastronomyRepository.save(laPalmaBar);
-		Gastronomy chammannaNalunsGastro = new Gastronomy("Bergrestaurant Chamanna Naluns", gastronomyTypes.get("bergrestaurant"), 0, 0, "Spcialität?");
+		Gastronomy chammannaNalunsGastro = new Gastronomy("Bergrestaurant Chamanna Naluns", gastronomyTypes.get("bergrestaurant"), 210, 75, "Spare Ribs");
 		gastronomyRepository.save(chammannaNalunsGastro);
-		Gastronomy laMotta = new Gastronomy("Bergrestaurant la Motta", gastronomyTypes.get("bergrestaurant"), 0, 0, "Spcialität?");
+		Gastronomy laMotta = new Gastronomy("Bergrestaurant la Motta", gastronomyTypes.get("bergrestaurant"), 450, 50, "Capuns");
 		gastronomyRepository.save(laMotta);
-		Gastronomy laCharpenna = new Gastronomy("Bergrestaurant La Charpenna", gastronomyTypes.get("bergrestaurant"), 0, 0, "Spcialität?");
+		Gastronomy laCharpenna = new Gastronomy("Bergrestaurant La Charpenna", gastronomyTypes.get("bergrestaurant"), 75, 75, "Burger");
 		gastronomyRepository.save(laCharpenna);
-		Gastronomy barMarMotta = new Gastronomy("Bar Mar-Motta", gastronomyTypes.get("bar"), 0, 0, "Spcialität?");
+		Gastronomy barMarMotta = new Gastronomy("Bar Mar-Motta", gastronomyTypes.get("bar"), 138, 242, "Scuolbrau");
 		gastronomyRepository.save(barMarMotta);
-		Gastronomy vivaBar = new Gastronomy("Viva Bar", gastronomyTypes.get("bar"), 0, 0, "Spcialität?");
+		Gastronomy vivaBar = new Gastronomy("Viva Bar", gastronomyTypes.get("bar"), 66, 180, "Jägertee");
 		gastronomyRepository.save(vivaBar);
-		Gastronomy alpetta = new Gastronomy("Bergrestaurant Alpetta", gastronomyTypes.get("bergrestaurant"), 0, 0, "Spcialität?");
+		Gastronomy alpetta = new Gastronomy("Bergrestaurant Alpetta", gastronomyTypes.get("bergrestaurant"), 345, 290, "Fondue");
 		gastronomyRepository.save(alpetta);
-		Gastronomy somiBar = new Gastronomy("Sömi Bar", gastronomyTypes.get("bergrestaurant"), 0, 0, "Spcialität?");
+		Gastronomy somiBar = new Gastronomy("Sömi Bar", gastronomyTypes.get("bergrestaurant"), 260, 40, "Pizza");
 		gastronomyRepository.save(somiBar);
-		Gastronomy vastur = new Gastronomy("Restaurant Vastur", gastronomyTypes.get("restaurant"), 0, 0, "Spcialität?");
+		Gastronomy vastur = new Gastronomy("Restaurant Vastur", gastronomyTypes.get("restaurant"), 185, 310, "Älplermagronen");
 		gastronomyRepository.save(vastur);
 		Map<String, Gastronomy> gastronomies = new HashMap<>();
 		gastronomies.put("barLaCana", barLaCana);

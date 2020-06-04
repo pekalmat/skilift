@@ -1,11 +1,9 @@
 package skilift.webserver.restcontroller;
 
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import skilift.webserver.cors.CorsHeaderData;
 import skilift.webserver.entities.Gastronomy;
 import skilift.webserver.entities.Lift;
-import skilift.webserver.entities.Person;
 import skilift.webserver.entities.Slope;
 import skilift.webserver.repositories.LiftRepository;
 import skilift.webserver.utilization.UtilizationSummary;
