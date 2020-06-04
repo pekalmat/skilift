@@ -6,4 +6,6 @@ import skilift.webserver.entities.SeatType;
 
 public interface SeatTypeRepository extends JpaRepository<SeatType, Long> {
 
+	public SeatType findBySeatType(String seatType);
+	
 }

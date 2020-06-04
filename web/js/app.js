@@ -12,7 +12,8 @@ var appReservation = Vue.component('app-reservation', {
                 innen: false,
                 aussen: false,
                 anzPersonen: '',
-                zeit: ''
+                zeit: '',
+                gastronomyId: ''
             }
         }
     },
@@ -92,8 +93,18 @@ var appReservation = Vue.component('app-reservation', {
             } 
         },
         submitReservation: function () {
-            
-
+            this.reservation.gastronomyId = "" + this.gastronomy.id;
+            var bodyData = JSON.stringify(this.reservation);
+            axios.post('http://127.0.0.1:8081/skiapp/reservation/new',
+                bodyData
+                )
+                .then( (response) => {
+                    //this.gastronomy = response.data;
+                    alert("Successfully submitted your reservation.")
+                })
+                .catch ( (error) => {
+                    console.log(error);
+                })
 
             console.log("reservation submited");
         }
@@ -104,7 +115,9 @@ var appReservation = Vue.component('app-reservation', {
 var appGastronomy = Vue.component('app-gastronomy', {
     data: function () {
         return {
-            gastronomy: null
+            gastronomy: null,
+            outdoorSeats: null,
+            indoorSeats: null
         }
     },
     template: `
@@ -123,8 +136,8 @@ var appGastronomy = Vue.component('app-gastronomy', {
                     <p class="font-weight-bold">Aktuell Freie Plätze:</p>
                     <div class="d-flex w-100">
                         <div class="">
-                            <p>Aussen: {{gastronomy.outdoorSeats}}</p>
-                            <p>Innen: {{gastronomy.indoorSeats}}</p>
+                            <p>Aussen: {{outdoorSeats}}</p>
+                            <p>Innen: {{indoorSeats}}</p>
                         </div>
 
                         <div class="m-auto">
@@ -149,6 +162,8 @@ var appGastronomy = Vue.component('app-gastronomy', {
     mounted: function () {
         this.getGastronomyDetails();
         this.getGastronomyUtilizationData();
+        this.getEmptyIndoorSeats();
+        this.getEmptyOutdoorSeats();
     },
     methods: {
         getGastronomyDetails: function () {
@@ -156,6 +171,28 @@ var appGastronomy = Vue.component('app-gastronomy', {
             axios.get('http://127.0.0.1:8081/skiapp/gastronomy/'+gastronomyId)
                 .then( (response) => {
                     this.gastronomy = response.data;
+                })
+                .catch ( (error) => {
+                    console.log(error);
+                })
+        },
+        getEmptyIndoorSeats: function () {
+            var gastronomyId = this.$route.params.id;
+            var seatTypeId = 1;
+            axios.get('http://127.0.0.1:8081//skiapp/gastronomies/' + gastronomyId + '/freeseats/' + seatTypeId)
+                .then( (response) => {
+                    this.indoorSeats = response.data;
+                })
+                .catch ( (error) => {
+                    console.log(error);
+                })
+        },
+        getEmptyOutdoorSeats: function () {
+            var gastronomyId = this.$route.params.id;
+            var seatTypeId = 2;
+            axios.get('http://127.0.0.1:8081//skiapp/gastronomies/' + gastronomyId + '/freeseats/' + seatTypeId)
+                .then( (response) => {
+                    this.outdoorSeats = response.data;
                 })
                 .catch ( (error) => {
                     console.log(error);

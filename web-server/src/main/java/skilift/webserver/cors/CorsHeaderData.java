@@ -16,8 +16,8 @@ public class CorsHeaderData {
 		corsHeaderData.add(CREDENTIALS_NAME, "true");
 		corsHeaderData.add(ORIGIN_NAME, "http://127.0.0.1:5500");
 		corsHeaderData.add(METHODS_NAME, "GET, OPTIONS, POST, PUT, DELETE");
-		corsHeaderData.add(CREDENTIALS_NAME, "Origin, X-Requested-With, Content-Type, Accept");
-		corsHeaderData.add(CREDENTIALS_NAME, "3600");
+		corsHeaderData.add(HEADERS_NAME, "Origin, X-Requested-With, Content-Type, Accept, authorization, x-csrf-token");
+		corsHeaderData.add(MAX_AGE_NAME, "3600");
 		return corsHeaderData;
 	}
 	
