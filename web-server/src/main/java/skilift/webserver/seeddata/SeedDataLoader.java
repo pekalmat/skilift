@@ -60,7 +60,7 @@ public class SeedDataLoader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		LOGGER.info("Start Loading Test Data...");
-		//insertTestData();
+		insertTestData();
 		LOGGER.info("Test Data Successfully Loaded");
 	}
 	

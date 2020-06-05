@@ -1,12 +1,9 @@
 package skilift.webserver.email;
-import java.net.Authenticator;
 import java.util.Properties;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
 
 
 
@@ -64,5 +61,9 @@ public class SendEmail {
     	
     	
     }
+	
+	public static void sendConfirmation() {
+		System.out.println("Send Confirmation");
+	}
 	
 }

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import skilift.webserver.cors.CorsHeaderData;
 import skilift.webserver.entities.Gastronomy;
-import skilift.webserver.entities.Lift;
 import skilift.webserver.entities.Reservation;
 import skilift.webserver.repositories.GastronomyRepository;
 import skilift.webserver.repositories.ReservationRepository;

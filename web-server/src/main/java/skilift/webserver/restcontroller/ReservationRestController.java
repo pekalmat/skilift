@@ -1,9 +1,7 @@
 package skilift.webserver.restcontroller;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -11,9 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -29,13 +23,11 @@ import skilift.webserver.cors.CorsHeaderData;
 import skilift.webserver.entities.Reservation;
 import skilift.webserver.entities.Gastronomy;
 import skilift.webserver.entities.Person;
-import skilift.webserver.entities.Reservation;
 import skilift.webserver.entities.SeatType;
 import skilift.webserver.repositories.ReservationRepository;
 import skilift.webserver.repositories.SeatTypeRepository;
 import skilift.webserver.repositories.GastronomyRepository;
 import skilift.webserver.repositories.PersonRepository;
-import skilift.webserver.utilization.UtilizationSummaryFactory;
 
 @RestController
 public class ReservationRestController {
@@ -52,7 +44,7 @@ public class ReservationRestController {
 	@Autowired
 	private PersonRepository personRepository;
 		
-	//@PostMapping(value = "/skiapp/reservation/new")
+
 	@RequestMapping(value = "/skiapp/reservation/new", method=RequestMethod.POST, produces={"application/json; charset=UTF-8", MediaType.APPLICATION_FORM_URLENCODED_VALUE})
     public @ResponseBody ResponseEntity<?> createReservation(@RequestParam Map<String, String> name) throws JsonParseException, JsonMappingException, IOException {
 		Reservation reservation = new Reservation();
@@ -83,7 +75,6 @@ public class ReservationRestController {
 			
 		}		
 		return new ResponseEntity<>(CorsHeaderData.getCorsHeaderData(), HttpStatus.CREATED);
-		
     }	
 
 }
