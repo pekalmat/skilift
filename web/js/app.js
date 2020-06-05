@@ -92,21 +92,55 @@ var appReservation = Vue.component('app-reservation', {
                 return '../img/restaurant.png';
             } 
         },
-        submitReservation: function () {
-            this.reservation.gastronomyId = "" + this.gastronomy.id;
-            var bodyData = JSON.stringify(this.reservation);
-            axios.post('http://127.0.0.1:8081/skiapp/reservation/new',
-                bodyData
-                )
-                .then( (response) => {
-                    //this.gastronomy = response.data;
-                    alert("Successfully submitted your reservation.")
-                })
-                .catch ( (error) => {
-                    console.log(error);
-                })
+            submitReservation: function () {
 
-            console.log("reservation submited");
+            var readyToSubmitt = true;
+            var inputs = ["vorname", "name", "email", "seats", "time"];
+            
+            for(i = 0; i < inputs.length; i++){
+                    
+                if(document.getElementById(inputs[i]).value == ""){
+                    document.getElementById(inputs[i]).style.borderColor="#FF0000";
+                    readyToSubmitt = false;
+                } else {
+                    document.getElementById(inputs[i]).style.borderColor="";
+                }  
+            }
+
+            if(document.getElementById("innen").checked == false && document.getElementById("aussen").checked == false){
+                document.getElementById("innen").style.backgroundColor="#FF0000";
+                document.getElementById("aussen").style.backgroundColor="#FF0000";
+                readyToSubmitt = false;
+            }else {
+                document.getElementById("innen").style.backgroundColor="";
+                document.getElementById("aussen").style.backgroundColor="";
+            }
+
+            if(readyToSubmitt == true){
+                this.reservation.gastronomyId = "" + this.gastronomy.id;
+                var bodyData = JSON.stringify(this.reservation);
+                axios.post('http://127.0.0.1:8081/skiapp/reservation/new',
+                    bodyData
+                    )
+                    .then( (response) => {
+                        //this.gastronomy = response.data;
+                        alert("Successfully submitted your reservation.")
+                    })
+                    .catch ( (error) => {
+                        console.log(error);
+                    })
+
+                history.back();
+
+                console.log("reservation submited");
+               
+            }else{
+                
+                window.alert("Bitte füllen Sie alle Felder aus");
+                
+            }
+
+
         }
     }
 })

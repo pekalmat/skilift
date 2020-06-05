@@ -33,31 +33,14 @@ public class SendEmail {
     		
         	message.setFrom(new InternetAddress("SkiliftApplikation@gmail.com"));
         	message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("tkollerpriv@gmail.com"));
-        	message.setSubject("Test");
-        	message.setText("erfolgreich");
+        	message.setSubject("Reservationsbestätigung");
+        	message.setText("Für Sie ist im Bergrestaurant xy ein Tisch auf die XX:XX reserviert.");
     		
 			Transport.send(message);
 		} catch (MessagingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}    	
-    	
-    	/*    	message.setFrom(new InternetAddress("SkiliftApplikation@gmail.com"));
-    	message.setRecipients(
-    	  Message.RecipientType.TO, InternetAddress.parse("tkollerpriv@gmail.com"));
-    	message.setSubject("Mail Subject");
-    	 
-    	String msg = "This is my first email using JavaMailer";
-    	 
-    	MimeBodyPart mimeBodyPart = new MimeBodyPart();
-    	mimeBodyPart.setContent(msg, "text/html");
-    	 
-    	Multipart multipart = new MimeMultipart();
-    	multipart.addBodyPart(mimeBodyPart);
-    	 
-    	message.setContent(multipart);
-    	 
-    	Transport.send(message); */
     	
     	
     }
