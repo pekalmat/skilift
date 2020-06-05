@@ -62,7 +62,7 @@ public class SeedDataLoader implements ApplicationRunner {
 		LOGGER.info("Start Loading Test Data...");
 		insertTestData();
 		LOGGER.info("Test Data Successfully Loaded");
-	}
+	}  
 	
 	private void insertTestData() {
 		Map<String, LiftStatus> liftStatus = liftSeedDataCreator.createLiftStatus();
